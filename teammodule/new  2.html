@@ -1,0 +1,259 @@
+<htmlform>
+
+	<macros>
+		paperFormId = (Fill this in)
+		headerColor =#415E92
+		fontOnHeaderColor = white
+	</macros>
+<style>
+.biginput input{
+height: 50px;
+width: 300px;
+}
+
+.biglonginput input, textarea{
+height: 30px;
+width: 90%;
+}
+
+table.designtable {
+width: 100%;
+border: solid 1px silver;
+border-collapse:collapse !important;
+empty-cells: show important;
+}
+.designtable td{
+padding-right: 0px !important;
+border: solid 1px #FBEFF2;
+padding: 0px 0px !important;
+max-width: 25%;
+width: 25%;
+}
+.designtable th{
+padding-right: 0px !important;
+border: solid 1px #FBEFF2;
+padding: 2px 20px !important;
+max-width: 25%;
+width: 25%;
+font-weight: normal;
+text-align: left;
+background-color: #FAFAFA;
+}
+.rule td{
+border-bottom: solid 1px silver !important;
+}
+.noborder td{
+border: none !important;
+}
+.radioinput input{
+width: 2% !important;
+}
+.radioinput label{
+display: inline-block;
+width: 29% !important;
+}
+.radioinputcompact input{
+width: 2% !important;
+}
+.radioinputcompact label{
+display: inline-block;
+width: 21% !important;
+}
+
+table.insideTable {
+border-collapse:collapse;
+}
+
+.insideTable td{
+height:35px !important;
+}
+</style>
+
+
+
+	<h2>Pregnancy Notification Form</h2>
+
+			<table class="designtable">
+                        <tr><td colspan="100" class="sectionHeader"><h4>Event Details</h4></td></tr>
+			<tr>
+				<td>Date:</td>
+				<td><encounterDate default="today"/></td>
+			</tr>
+			<tr>
+				<td>Location:</td>
+				<td><encounterLocation tags="UC,HOSPITAL"/></td>
+			</tr>
+			<tr>
+				<td>Provider:</td>
+				<td><encounterProvider/></td>
+			</tr>
+		</table>
+
+
+		<table class="designtable">
+                <tr><td colspan="100" class="sectionHeader"><h4>Woman Information</h4></td></tr>
+
+			<tr>
+				<td>Woman's Name</td>
+				<td><input id="patientName" name="patientName"/></td>
+			</tr>
+			<tr>
+				<td>Woman's age</td>
+				<td><patient id ="age" field="age"/><span id="ageTip" style="color:red">Age must be from 5 to 9</span></td>
+			</tr>
+
+                        <tr>
+				<td>Woman CNIC</td>
+				<td><obs id="womanNIC" conceptId="162849" /></td>
+			</tr>
+<obsgroup groupingConceptId="163096">
+			<tr>
+				<td>House and Street</td>
+				<td><obs conceptId="162318" /></td>
+			</tr>
+			<tr>
+				<td>Province</td>
+				<td><obs conceptId="162307" /></td>
+			</tr>
+			<tr>
+				<td>District</td>
+				<td><obs conceptId="162319" /></td>
+			</tr>
+			<tr>
+				<td>Tehsil</td>
+				<td><obs conceptId="162308" /></td>
+			</tr>
+			<tr>
+				<td>Union Council (UC)</td>
+				<td><obs conceptId="163036" /></td>
+			</tr>
+</obsgroup>
+
+			<tr>
+				<td>Woman's Marital Status</td>
+				<td><obs conceptId="162265" /></td>
+			</tr>
+
+			<tr>
+				<td>Contact person/ next kin of pregnant woman</td>
+				<td><obs conceptId="163109" /></td>
+			</tr>
+			<tr>
+				<td>ANC Registration Date</td>
+				<td><obs conceptId="163106" /></td>
+			</tr>
+			<tr>
+				<td>Name of health facility</td>
+				<td><obs conceptId="163107" /></td>
+			</tr>
+			<tr>
+				<td>ANC number</td>
+				<td><obs conceptId="1425" /></td>
+			</tr>
+
+			<tr>
+				<td>LMP</td>
+				<td><obs conceptId="1427" /></td>
+			</tr>
+			<tr>
+				<td>EDD</td>
+				<td><obs conceptId="5596" /></td>
+			</tr>
+			<tr>
+				<td>Planned facility for delivery?</td>
+				<td><obs conceptId="163110" /></td>
+			</tr>
+
+			<tr>
+				<td>Planned mode of transportation for delivery?</td>
+				<td><obs conceptId="163111" /></td>
+			</tr>
+
+			<tr>
+				<td>Is pregnant woman currently enrolled in HIV care?</td>
+				<td><obs conceptId="159811" /></td>
+			</tr>
+
+                       <tr>
+				<td>Number of times woman has been pregnant</td>
+				<td><obs id="gravida" conceptId="5624" /><span style="color:red; display:none">Enter from 1 to 20</span></td>
+			</tr>
+			<tr>
+				<td>Number of times woman has given birth</td>
+				<td><obs id="parity" conceptId="1053" /></td>
+    			</tr>
+
+			<tr>
+				<td>Does woman have any of the following chronic medical conditions?</td>
+				<td><obs conceptId="163113" /></td>
+			</tr>
+
+                        <tr>
+				<td>Woman's blood group</td>
+				<td><obs conceptId="300" /></td>
+    			</tr>
+                        <tr>
+				<td>Woman's height (in inches)</td>
+				<td><obs conceptId="5090" /></td>
+    			</tr>
+			<tr>
+				<td>Woman's weight at start of pregnancy (in kgs)</td>
+				<td><obs conceptId="160696" /></td>
+			</tr>
+			
+
+			<!-- <tr>
+				<td>Applicant Name</td>
+				<td><obs conceptId="" /></td>
+			</tr>
+			<tr>
+				<td>Applicant Name</td>
+				<td><obs conceptId="" /></td>
+			</tr>
+			<tr>
+				<td>Applicant Name</td>
+				<td><obs conceptId="" /></td>
+			</tr> -->
+		</table>
+
+	<submit id="submitForm"/>
+
+<script type="text/javascript">
+  if(jQuery){
+      jQuery(document).ready(function(){
+         document.getElementById('ageTip').style.display = "none";
+         beforeSubmit.push(function() {
+    alert("inside");
+    var val = getValue('gravida.value');
+    if (val &lt; 1 || val &gt; 20 ) {
+        document.getElementById('gravidaTip').style.display = "block";
+        return false;
+    }
+    return true;
+});
+       });
+}
+
+	//jQuery('#age').change(function(){
+      function ageCheck(){
+       // alert('inside');
+        var age = document.getElementById('age').value;
+        alert(age);
+        if(age &lt; 5 || age &gt; 9){
+              //alert('inside');
+	      document.getElementById('ageTip').style.display = "block";
+              document.getElementById('age').focus();
+        }else{
+              document.getElementById('ageTip').style.display = "hidden";
+        }
+        
+      }
+
+//});
+
+
+       
+
+
+</script>
+</htmlform>
